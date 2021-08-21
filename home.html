@@ -1,0 +1,19 @@
+<html>
+	<head></head>
+	<body>
+		<a href="javascript:void(0)" id="logout">Logout</a>
+		<!--- ENTER THE CONTENT OF HOME HERE -->
+		<!--- END CONTENT OF HOME HERE -->
+		<script>
+			var currentUser = localStorage.getItem("__currentUser", false)
+			if (!currentUser) {
+				window.location.href = "./index.html"
+			}
+
+			document.getElementById('logout').addEventListener('click', function () {
+				localStorage.removeItem("__currentUser")
+				window.location.href = "./index.html"
+			})
+		</script>
+	</body>
+</html>
